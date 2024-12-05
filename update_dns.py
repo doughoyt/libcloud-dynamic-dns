@@ -67,7 +67,7 @@ class GoogleDNSUpdater:
         for zone in self.list_zones():
             if zone.domain == zone_name:
                 print("Setting A record: {}.{} to point: {}".format(record_name, zone.domain, ip))
-                return gdns.create_or_update_record(zone, record_name, ip, ttl_seconds)
+                return self.create_or_update_record(zone, record_name, ip, ttl_seconds)
         return False
 
 if __name__ == '__main__':
